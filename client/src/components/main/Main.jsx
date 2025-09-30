@@ -1,10 +1,13 @@
 import React from 'react'
-import SongList from './SongList'
-import SongResults from './SongResults'
+import SongList from '../../components/main/SongList'
+import SongResults from '../../components/main/SongResults'
 
-function Main() {
+function Main({songs, playlistSong, onClick}) {
   return (
-    <div>Main</div>
+    <section className='lists-container'>
+      <SongResults songs={songs} onClick={onClick}/>
+      <SongList playlistSong={playlistSong}/>
+    </section>
   )
 }
 

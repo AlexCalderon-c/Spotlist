@@ -1,8 +1,17 @@
 import React from 'react'
+import SongPlaylistItem from './SongPlaylistItem'
 
-function SongList() {
+function SongList({playlistSong}) {
+  
   return (
-    <div>SongList</div>
+    <div className='song-playlist'>
+      <input type="text" className='playlist-name'/>  
+      <div className="playlist-items">
+        {playlistSong.map((song, index) => (
+          <SongPlaylistItem key={index} song={song}/>
+        ))}
+      </div>
+    </div>
   )
 }
 
