@@ -1,5 +1,6 @@
 import React from 'react'
 import SongItem from './SongItem'
+import '../../assets/static/css/songResult.css'
 
 function SongResults({songs, onClick}) {
 

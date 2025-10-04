@@ -1,7 +1,8 @@
 import React from 'react'
 import SongPlaylistItem from './SongPlaylistItem'
+import '../../assets/static/css/songList.css'
 
-function SongList({playlistSong, onDelete, onChange, name}) {
+function SongList({playlistSong, onDelete, onChange, name, onPlaylist}) {
   
   return (
     <div className='song-playlist'>
@@ -11,7 +12,7 @@ function SongList({playlistSong, onDelete, onChange, name}) {
           <SongPlaylistItem key={song.id} song={song} onDelete={onDelete}/>
         ))}
       </div>
-      <button className='button-save'>Save to spotify</button>
+      <button className='button-save' onClick={onPlaylist}>Save to spotify</button>
     </div>
   )
 }

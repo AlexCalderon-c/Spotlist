@@ -4,6 +4,7 @@ import SearchContainer from './components/search/SearchContainer'
 import Main from './components/main/Main'
 import {getToken, initiateSpotifyAuth} from './authService.js'
 import {searchTrack} from './searchApi.js'
+import {createPlaylist} from './createPlaylist.js'
 
 
 function App() {
@@ -45,32 +46,41 @@ function App() {
     setPlaylistItems(prev => prev.filter(item => item.id !== index))
   }
 
-useEffect(() => {
-
-  const urlParams = new URLSearchParams(window.location.search)
-  const code = urlParams.get('code')
-  if (code) {
-    const setupToken = async () => {
-      try {
-        const newToken = await getToken(code)
-        if (newToken) {
-          localStorage.setItem('access_token', newToken)
-          console.log('New token obtained:', newToken)
-          setToken(newToken)
-        }
-      } catch (error) {
-        console.error('Error setting up token:', error)
-      }
+  const handleUser = () => {
+    if (token) {
+      createPlaylist(name, token, uri)
+      alert('Playlist created successfully!')
+      setUri([])
+      setPlaylistItems([])
+      setName('')
     }
-    setupToken()
   }
-}, [])
 
-useEffect(() => {
-  if (token) {
-    localStorage.setItem('access_token', token)
-  }
-}, [token])
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const code = urlParams.get('code')
+    if (code) {
+      const setupToken = async () => {
+        try {
+          const newToken = await getToken(code)
+          if (newToken) {
+            localStorage.setItem('access_token', newToken)
+            console.log('New token obtained:', newToken)
+            setToken(newToken)
+          }
+        } catch (error) {
+          console.error('Error setting up token:', error)
+        }
+      }
+      setupToken()
+    }
+  }, [])
+
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem('access_token', token)
+    }
+  }, [token])
 
 
   const handleLogin = () => {
@@ -80,8 +90,10 @@ useEffect(() => {
   return (
     <>
       <Header onClick={handleLogin}/>
-      <SearchContainer onChange={handleChangeInput} text={input}/>
-      <Main song={song} onClick={handleClick} playlistSong={playlistItems} onDelete={handleDelete} onInputChange={handleChangeInput} onNameChange={handleChangeName} name={name}/>
+      <main>
+        <SearchContainer onChange={handleChangeInput} text={input}/>
+        <Main song={song} onClick={handleClick} playlistSong={playlistItems} onDelete={handleDelete} onInputChange={handleChangeInput} onNameChange={handleChangeName} name={name} onPlaylist={handleUser}/>
+      </main>
     </>
   )
 }

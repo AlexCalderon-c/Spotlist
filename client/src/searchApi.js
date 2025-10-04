@@ -5,7 +5,7 @@ export const searchTrack = async (query, token) => {
         q: query,
         token: token,
         type: 'track',
-        limit: 10,
+        limit: 30,
         market: 'US'
     });
 

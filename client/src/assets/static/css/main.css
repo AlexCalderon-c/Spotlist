@@ -1,0 +1,9 @@
+.lists-container{
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;    
+}

@@ -1,0 +1,26 @@
+.song-playlist{
+    width: 40%;
+    background-color: #121212;
+    border-radius: 20px;
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+    min-height: 100vh;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #505050;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    &::-webkit-scrollbar-track {
+        top: 10px;
+        background-color: #282828;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #6d6d6d;
+    }
+}

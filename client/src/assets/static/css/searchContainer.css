@@ -1,0 +1,29 @@
+.search-bar-container{
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #121212;
+    color: white;
+    max-width: 70%;
+    border-radius: 30px;
+    gap: 20px;
+}
+
+.separator{
+    border: 1px solid #333;
+    width: 100%;
+}
+
+.text-desc{
+    text-align: center;
+}
+
+.text-desc h1{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
