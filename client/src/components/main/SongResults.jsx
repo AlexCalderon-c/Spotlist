@@ -6,9 +6,12 @@ function SongResults({songs, onClick}) {
 
   return (
     <div className='song-results-container'>
-      {songs.map((song) => (
-        <SongItem key={song.id} song={song} onClick={onClick}/>
-      ))}
+      <h2>Results</h2>
+      <div className="playlist-items">
+        {songs.map((song) => (
+          <SongItem key={song.id} song={song} onClick={onClick}/>
+        ))}
+      </div>
     </div>
   )
 }

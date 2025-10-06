@@ -1,0 +1,16 @@
+.delete-song{
+    background: transparent;
+    min-width: 30px;
+    min-height: 30px;
+    color: rgb(234, 71, 71);
+    border: 1px solid white;
+    border-radius: 100%;
+    cursor: pointer;
+    font-size: 15px;    
+    transition: 0.3s background-color ease, 0.3s color ease;
+}
+
+.delete-song:hover{
+    background-color: rgb(234, 71, 71);
+    color: black;
+}

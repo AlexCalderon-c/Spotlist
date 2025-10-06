@@ -1,4 +1,7 @@
 .song-playlist{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 40%;
     background-color: #121212;
     border-radius: 20px;
@@ -23,4 +26,32 @@
     &::-webkit-scrollbar-thumb:hover {
         background: #6d6d6d;
     }
+}
+
+.playlist-name{
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.button-save{
+    background-color: #1ed760;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.button-save:hover{
+    background-color: white;
+    color: #1ed760;
 }

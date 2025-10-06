@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import '../../assets/static/css/songPlaylistItem.css'
 
 function SongPlaylistItem({song, onDelete}) {
     
@@ -11,6 +12,7 @@ function SongPlaylistItem({song, onDelete}) {
             </div>
             <button className='delete-song' onClick={() => onDelete(song.id)}>X</button>
         </div>
+        <div className="separator"></div>
     </>
   )
 }
